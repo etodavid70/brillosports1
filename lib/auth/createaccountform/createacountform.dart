@@ -1,5 +1,6 @@
 import "dart:convert";
 
+import 'package:brillosports/dashboard/dashboard.dart';
 import 'package:brillosports/widgets/dropdown/dropdown.dart';
 import "package:flutter/material.dart";
 import "package:flutter/widgets.dart";
@@ -304,6 +305,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   text: "Register",
                   onPressed: () async {
                     var isFormValid = formValidation();
+
+                    if(isFormValid){
+Get.to(DashboardScreen());
+                    }
 
                     //start the loader
                     // loaderController.showLoader();

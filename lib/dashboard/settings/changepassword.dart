@@ -31,6 +31,20 @@ class _ChangePasswordState extends State<ChangePassword> {
   final TextEditingController _passwordController = TextEditingController();
   
 
+bool formValidation() {
+    if (_emailController.text.isEmpty) {
+      Get.snackbar('Error', 'email field is empty');
+      return false;
+    }
+    if (_passwordController .text.isEmpty) {
+      Get.snackbar('Error', 'password field is empty');
+      return false;
+    }
+    else {
+      return true;
+    }
+
+}
   
   // bool passwordIsFilled=false;
   // Map<String, dynamic> states={};
@@ -119,6 +133,12 @@ class _ChangePasswordState extends State<ChangePassword> {
                   text: "Continue",
                   onPressed: () async {
                  
+                 bool isFormValid=formValidation();
+
+                 if(isFormValid){
+
+
+                 }
 
                     // Get.to(DashboardScreen());
                     //start the loader
